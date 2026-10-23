@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulador do Efeito Doppler</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <span class="tag">FÍSICA • ONDAS SONORAS</span>
+      <h1>Efeito Doppler</h1>
+      <p>Explore como o movimento da fonte e do observador altera a frequência percebida.</p>
+    </header>
+
+    <section class="painel">
+      <h2>Parâmetros do sistema</h2>
+
+      <div class="campo">
+        <label for="vo">Velocidade do observador (m/s)</label>
+        <input type="number" id="vo" value="0" min="0" step="1">
+        <label for="dirObs">Movimento do observador</label>
+        <select id="dirObs">
+          <option value="aproxima">Aproximando-se da fonte</option>
+          <option value="afasta">Afastando-se da fonte</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="vs">Velocidade da fonte (m/s)</label>
+        <input type="number" id="vs" value="20" min="0" step="1">
+        <label for="dirFonte">Movimento da fonte</label>
+        <select id="dirFonte">
+          <option value="aproxima">Aproximando-se do observador</option>
+          <option value="afasta">Afastando-se do observador</option>
+        </select>
+      </div>
+
+      <div class="campo">
+        <label for="vSom">Velocidade do som (m/s)</label>
+        <input type="number" id="vSom" value="343" min="1" step="1">
+      </div>
+
+      <div class="campo">
+        <label for="frequencia">Frequência da fonte (Hz)</label>
+        <input type="number" id="frequencia" value="440" min="1" step="1">
+      </div>
+
+      <button id="calcular">Calcular frequência percebida</button>
+      <button id="resetar" class="secundario">Restaurar valores padrão</button>
+      <p id="erro" role="alert"></p>
+    </section>
+
+    <section class="resultado">
+      <span class="subtitulo">FREQUÊNCIA PERCEBIDA</span>
+      <div class="valor">
+        <span id="resultado">467,22</span>
+        <span class="unidade">Hz</span>
+      </div>
+      <h2 id="situacao">Som mais agudo</h2>
+      <p id="descricao">
+        A frequência percebida é maior que a frequência emitida.
+      </p>
+    </section>
+
+    <section class="painel">
+      <h2>Resumo dos resultados</h2>
+      <div class="linha">
+        <span>Frequência emitida</span>
+        <strong id="freqOriginal">440 Hz</strong>
+      </div>
+      <div class="linha">
+        <span>Variação de frequência</span>
+        <strong id="variacao">+27,22 Hz</strong>
+      </div>
+      <div class="linha">
+        <span>Variação percentual</span>
+        <strong id="percentual">+6,19%</strong>
+      </div>
+      <div class="formula">
+        <p>Fórmula utilizada</p>
+        <div>f' = f × (v ± v<sub>o</sub>) / (v ∓ v<sub>f</sub>)</div>
+        <small>
+          Os sinais dependem do sentido do movimento relativo.
+        </small>
+      </div>
+    </section>
+
+    <footer>
+      <p>Simulador educacional • Efeito Doppler sonoro</p>
+    </footer>
+  </main>
+</body>
+</html>
